@@ -1,7 +1,42 @@
-body{
-    background-image: url(boteco.png);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+body {
+    margin: 0;
+    overflow: hidden; /* Impede a rolagem da página */
+    height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+#fundo{    
+    background-image: url('boteco.png');
     background-size: cover;
-    background-position: center center;   
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    filter: blur(8px);
+    position: fixed;
+    top: -10px; /* Um pequeno truque para evitar bordas claras por causa do blur */
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    z-index: -1; /* Envia a camada para trás do conteúdo */
+}
+
+#startButton {
+    padding: 15px 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #8B4513; /* Cor de sela */
+    color: white;
+    border: 2px solid #F4A460; /* Cor de areia */
+    border-radius: 5px;
+    margin-top: 20px;
+}
+
+.conteudo-principal {
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    position: relative; /* Garante que o conteúdo fique sobre o z-index -1 */
 }
