@@ -1,28 +1,36 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Duelo no cangaço</title>
-    <link rel="shortcut icon" href="revolver.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+    <title>Duelo no Boteco</title>
 </head>
 <body>
-    <div id="fundo">
+    <div class="container">
+        <div class="box" id="start-box">
+            <h1>Duelo no Boteco</h1>
+            <p>Seja rápido no gatilho! O primeiro a atirar após o "FOGO!" vence. Se atirar antes, é um covarde e perde na hora.</p>
+            <p>JOGADOR 1 (Esquerda): Tecla 'q'</p>
+            <p>JOGADOR 2 (Direita): Tecla 'p'</p>
+            <button id="ok-button">OK</button>
+        </div>
+
+        <div id="game-area" class="hidden">
+            <h1 id="countdown">Prepare-se...</h1>
+            <div class="players">
+                <div class="player" id="player1">
+                    <h2>Jogador 1</h2>
+                    <img src="revolver.png" alt="Revolver 1">
+                </div>
+                <div class="player" id="player2">
+                    <h2>Jogador 2</h2>
+                    <img src="revolver.png" alt="Revolver 2">
+                </div>
+            </div>
+            <p id="result-message"></p>
+        </div>
     </div>
-    <div class="conteudo-principal">
-        <header>
-            <h1>Ao cair da moeda, a bala pode comer, estão prontos para o duelo senhores?</h1>
-        </header>
-        
-        <main>
-            <button id="startButton">Iniciar Jogo</button>
-        </main>
-        
-        <footer>
-            <p>&copy; 2025 - Desenvolvido por Pedro Borges e Walter Camargo</p>
-        </footer>   
-    </div>
+    <script src="script.js"></script>
 </body>
 </html>

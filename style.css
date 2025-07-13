@@ -1,42 +1,84 @@
 body {
+    background-image: url("boteco.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
     margin: 0;
-    overflow: hidden; /* Impede a rolagem da página */
-    height: 100vh; /* Garante que o body ocupe toda a altura da janela */
+    font-family: 'Courier New', Courier, monospace;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.container {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    height: 100%;
+    flex-direction: column;
+}
+
+.box {
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 20px 40px;
+    border: 2px solid #ffcc00;
+    border-radius: 10px;
     text-align: center;
 }
-#fundo{    
-    background-image: url('boteco.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    width: 100%;
-    filter: blur(8px);
-    position: fixed;
-    top: -10px; /* Um pequeno truque para evitar bordas claras por causa do blur */
-    left: -10px;
-    right: -10px;
-    bottom: -10px;
-    z-index: -1; /* Envia a camada para trás do conteúdo */
-}
 
-#startButton {
-    padding: 15px 30px;
+.box button {
+    padding: 10px 20px;
     font-size: 1.2em;
     cursor: pointer;
-    background-color: #8B4513; /* Cor de sela */
-    color: white;
-    border: 2px solid #F4A460; /* Cor de areia */
+    background-color: #ffcc00;
+    border: none;
     border-radius: 5px;
-    margin-top: 20px;
+    color: black;
 }
 
-.conteudo-principal {
-    color: white;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    position: relative; /* Garante que o conteúdo fique sobre o z-index -1 */
+.hidden {
+    display: none;
+}
+
+#game-area {
+    text-align: center;
+}
+
+#countdown {
+    font-size: 5em;
+    font-weight: bold;
+}
+
+.players {
+    display: flex;
+    justify-content: space-around;
+    width: 100vw;
+}
+
+.player {
+    text-align: center;
+}
+
+.player img {
+    width: 150px; /* Ajuste o tamanho conforme necessário */
+    transform: rotate(-90deg); /* Para deixar a arma de lado */
+}
+
+#result-message {
+    font-size: 3em;
+    font-weight: bold;
+    margin-top: 40px;
+}
+
+.play-again-button {
+    display: block;
+    margin: 20px auto; /* Centraliza o botão */
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    color: black;
+    font-family: 'Courier New', Courier, monospace;
 }
