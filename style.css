@@ -10,6 +10,20 @@ body {
     text-shadow: 2px 2px 4px #000000;
 }
 
+/* Estiliza ambos os inputs de texto */
+input[type="text"] {
+    display: block; /* Faz cada input ocupar sua própria linha */
+    width: 30%; /* Largura do input */
+    padding: 12px; /* Espaçamento interno */
+    margin: 10px auto; /* Centraliza e adiciona espaço entre eles */
+    font-size: 16px; /* Tamanho do texto dentro do input */
+    border: 2px solid #ccc; /* Borda cinza */
+    border-radius: 8px; /* Cantos arredondados */
+    background-color: #f8f8f8; /* Cor de fundo clara */
+    text-align: center; /* Centraliza o texto do placeholder */
+}
+
+
 .container {
     display: flex;
     justify-content: center;

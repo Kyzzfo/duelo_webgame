@@ -10,8 +10,28 @@ document.addEventListener('DOMContentLoaded', () => {
     let canShoot = false;
     let gameOver = false;
 
+    // --- captura dos Nomes dos Jogadores ---
+    const player1NameInput = document.getElementById('player1-name');
+    const player2NameInput = document.getElementById('player2-name');
+
+    let player1Name = '';
+    let player2Name = '';
+
     // --- Evento do Botão OK ---
     okButton.addEventListener('click', () => {
+
+        // Verifica se os nomes dos jogadores foram preenchidos
+        if (player1NameInput.value.trim() === '' || player2NameInput.value.trim() === '') {
+            alert('Por favor, preencha os nomes dos jogadores!');
+            return;
+        }
+
+        // Atualiza os nomes dos jogadores na área de jogo
+        player1Name = player1NameInput.value.trim();
+        player2Name = player2NameInput.value.trim();
+        document.getElementById('player1-name-display').textContent = player1Name;
+        document.getElementById('player2-name-display').textContent = player2Name;
+
         startBox.style.display = 'none';
         gameArea.classList.remove('hidden');
         startGame();
@@ -49,13 +69,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const key = event.key.toLowerCase();
 
         if ((key === 'q' || key === 'p') && !canShoot) {
-            const loser = key === 'q' ? 1 : 2;
-            endGame(`Jogador ${loser} é um covarde! Atirou antes da hora!`);
+            const loser = key === 'q' ? player1Name : player2Name;
+            endGame(`${loser} é um covarde! Atirou antes da hora!`);
         }
         
         if ((key === 'q' || key === 'p') && canShoot) {
-            const winner = key === 'q' ? 1 : 2;
-            endGame(`Jogador ${winner} venceu o duelo!`);
+            const winner = key === 'q' ? player1Name : player1Name;
+            endGame(`${winner} venceu o duelo!`);
         }
     });
 
