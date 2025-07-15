@@ -75,7 +75,11 @@ input[type="text"] {
 
 .player img {
     width: 150px; /* Ajuste o tamanho conforme necessário */
-    transform: rotate(-90deg); /* Para deixar a arma de lado */
+    transform: rotate(0deg); /* Para deixar a arma de lado */
+}
+/* Nova regra para espelhar a arma do Jogador 2 */
+#player2 img {
+    transform: rotate(360deg) scaleX(-1);
 }
 
 #result-message {
