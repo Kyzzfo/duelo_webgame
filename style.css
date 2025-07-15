@@ -74,18 +74,18 @@ input[type="text"] {
 }
 
 .player img {
-    width: 150px; /* Ajuste o tamanho conforme necessário */
-    transform: rotate(0deg); /* Para deixar a arma de lado */
+    width: 500px; /* Ajuste o tamanho da imagem do revólver */
+    height: auto; /* Mantém a proporção da imagem */
+    margin-top: 20px; /* Espaço entre o nome e a imagem */
+    margin-bottom: 0; /* Remove o espaço abaixo da imagem */
+
 }
-/* Nova regra para espelhar a arma do Jogador 2 */
-#player2 img {
-    transform: rotate(360deg) scaleX(-1);
-}
+
 
 #result-message {
     font-size: 3em;
     font-weight: bold;
-    margin-top: 40px;
+    margin-top: 0;
 }
 
 .play-again-button {

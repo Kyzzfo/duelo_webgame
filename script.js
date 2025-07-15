@@ -10,6 +10,9 @@ document.addEventListener('DOMContentLoaded', () => {
     let canShoot = false;
     let gameOver = false;
 
+    const player1Image = document.getElementById('jogador1');
+    const player2Image = document.getElementById('jogador2');
+
     // --- captura dos Nomes dos Jogadores ---
     const player1NameInput = document.getElementById('player1-name');
     const player2NameInput = document.getElementById('player2-name');
@@ -40,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Função para Iniciar o Jogo ---
     function startGame() {
         // Reseta o estado do jogo para um novo duelo
+        player1Image.src = '1tiro.png'; // Reseta a imagem do Jogador 1
+        player2Image.src = '2tiro.png'; // Reseta a imagem do Jogador 2
+
         canShoot = false;
         gameOver = false;
         resultMessage.textContent = ''; // Limpa a mensagem de resultado anterior
@@ -70,11 +76,23 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if ((key === 'q' || key === 'p') && !canShoot) {
             const loser = key === 'q' ? player1Name : player2Name;
+            if (key === 'q') {
+                player1Image.src = '1covarde.gif'; // Imagem de covarde para Jogador 1
+            } else {
+                player2Image.src = '2covarde.gif'; // Imagem de covarde para Jogador 2
+            }
             endGame(`${loser} é um covarde! Atirou antes da hora!`);
         }
         
         if ((key === 'q' || key === 'p') && canShoot) {
-            const winner = key === 'q' ? player1Name : player1Name;
+            const winner = key === 'q' ? player1Name : player2Name;
+            if (key === 'q') {
+                player1Image.src = '1tiro.gif'; // Imagem de vencedor para Jogador 1
+                player2Image.src = '2morto.gif'; // Imagem de morto para Jogador 2
+            } else {
+                player2Image.src = '2tiro.gif'; // Imagem de vencedor para  Jogador 2
+                player1Image.src = '1morto.gif'; // Imagem de morto para Jogador 1
+            }
             endGame(`${winner} venceu o duelo!`);
         }
     });
@@ -93,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const playAgainButton = document.createElement('button');
             playAgainButton.textContent = 'Jogar Novamente';
             playAgainButton.className = 'play-again-button'; // Adiciona uma classe para estilo
-
+           
             // 2. Adiciona um evento de clique para reiniciar o jogo
             playAgainButton.addEventListener('click', () => {
                 // Esconde a área de jogo e mostra a caixa inicial, reiniciando o ciclo
